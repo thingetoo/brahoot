@@ -1,0 +1,39 @@
+.game-card {
+    border: 1px solid black;
+    width: 50vw;
+    height: 35vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button {
+    border: none;
+    padding: 10px 10px;
+    outline: none;
+    width: 80px
+}
+
+.answer-container {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    color: white;
+    background-color: goldenrod;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+}
+
+#question-text {
+    margin-top: 10px;
+}

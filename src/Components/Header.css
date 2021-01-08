@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 25px
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 a {
@@ -11,7 +12,7 @@ a {
 }
 
 a:hover {
-    color:white
+    color:white;
 }
 
 #title {
