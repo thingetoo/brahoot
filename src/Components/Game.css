@@ -18,10 +18,11 @@ button {
 .answer-container {
     width: 400px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+    height: 175px;
 }
 
 button:hover {
@@ -36,4 +37,24 @@ button:hover {
 
 #question-text {
     margin-top: 10px;
+}
+
+#question-number {
+    text-decoration: underline;
+}
+
+.each-answer-button {
+    width:initial;
+}
+
+.post-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restart {
+    margin-top: 30px;
+    width: auto;
+    background: yellowgreen
 }
