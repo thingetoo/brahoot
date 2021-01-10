@@ -1,9 +1,18 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+.header-container {
+    background: #8fc6c4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-top: 25px;
-    margin-bottom: 25px;
+    background-color: #c7e6d7
 }
 
 a {
@@ -12,13 +21,15 @@ a {
 }
 
 a:hover {
-    color:white;
+    color:black;
 }
 
 #title {
     font-size: 3rem;
     letter-spacing: 5px;
     margin-top: 20px;
+    font-family: 'Sedgwick Ave Display', cursive;
+    color: #3f474c;
 }
 
 .element {
@@ -26,5 +37,5 @@ a:hover {
 }
 
 .element:hover {
-    background-color: goldenrod
+    background-color: #fbf4e9;
 }

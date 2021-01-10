@@ -3,9 +3,9 @@ import "./Header.css";
 
 function Header(props) {
   return (
-    <div>
-      <span id="title">Brahoot!</span>
-      <header className="container">
+    <div className="header-container">
+      <span id="title">BRAHOOT!</span>
+      <header className="menu-container">
         <a href="google" className="element home">
           Home
         </a>

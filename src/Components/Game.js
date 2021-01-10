@@ -84,7 +84,7 @@ const Game = () => {
   };
 
   return (
-    <div className="container">
+    <div className="game-container">
       <div className="game-card">
         {showScore ? (
           <div className="post-game">
@@ -104,8 +104,9 @@ const Game = () => {
               </span>
             </div>
             <div className="answer-container">
-              {questions[questionNumber].answerOptions.map((answer) => (
+              {questions[questionNumber].answerOptions.map((answer, idx) => (
                 <button
+                  key={`answer# ${idx}`}
                   onClick={() => handleAnswerButtonClick(answer.isCorrect)}
                   className="each-answer-button"
                 >

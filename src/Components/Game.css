@@ -1,3 +1,11 @@
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .game-card {
     border: 1px solid black;
     width: 50vw;
