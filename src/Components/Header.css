@@ -12,7 +12,8 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 25px;
-    background-color: #c7e6d7
+    background-color: #c7e6d7;
+    border: 1px solid #fabfb8;
 }
 
 a {
@@ -30,6 +31,8 @@ a:hover {
     margin-top: 20px;
     font-family: 'Sedgwick Ave Display', cursive;
     color: #3f474c;
+    text-shadow: 2px 2px #fabfb8;
+    text-align: center;
 }
 
 .element {

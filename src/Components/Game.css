@@ -8,12 +8,14 @@
 
 .game-card {
     border: 1px solid black;
-    width: 50vw;
+    width: 40vw;
     height: 35vh;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-align: center;
+    background-color: #fabfb8
 }
 
 button {
@@ -34,8 +36,9 @@ button {
 }
 
 button:hover {
-    color: white;
-    background-color: goldenrod;
+    color: #fabfb8;
+    background-color: #3f474c;
+    font-weight: bold;
 }
 
 .question {
