@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HighScores from "./HighScores";
 import "./Game.css";
 
 const Game = () => {
@@ -64,6 +65,7 @@ const Game = () => {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [numberCorrect, setNumberCorrect] = useState(0);
+  const [highScores, setHighScores] = useState([0, 1, 2, 3]);
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect) {
@@ -117,6 +119,7 @@ const Game = () => {
           </>
         )}
       </div>
+      <HighScores highScores={highScores} />
     </div>
   );
 };
