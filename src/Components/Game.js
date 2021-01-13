@@ -1,72 +1,17 @@
 import React, { useState } from "react";
 import HighScores from "./HighScores";
+import { NameForm } from "./NameForm";
+
 import "./Game.css";
+import { questions } from "../data/Questions";
 
 const Game = () => {
-  const questions = [
-    {
-      questionText: "Which of the following is not JavaScript Data Types?",
-      answerOptions: [
-        { answerText: "Undefined", isCorrect: false },
-        { answerText: "Number", isCorrect: false },
-        { answerText: "Boolean", isCorrect: false },
-        { answerText: "Float", isCorrect: true },
-      ],
-    },
-    {
-      questionText: "Which company developed JavaScript?",
-      answerOptions: [
-        { answerText: "Netscape", isCorrect: true },
-        { answerText: "Bell Labs", isCorrect: false },
-        { answerText: "IBM", isCorrect: false },
-        { answerText: "ECMA", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Inside which HTML element do we put the JavaScript?",
-      answerOptions: [
-        { answerText: "<script>", isCorrect: true },
-        { answerText: "<head>", isCorrect: false },
-        { answerText: "<meta>", isCorrect: false },
-        { answerText: "<style>", isCorrect: false },
-      ],
-    },
-    {
-      questionText:
-        "What are the three important manipulations done in a for loop on a loop variable in javascript?",
-      answerOptions: [
-        {
-          answerText: "the initialization, the Incrementation, and update",
-          isCorrect: false,
-        },
-        {
-          answerText: "the initialization, the test, and the update",
-          isCorrect: true,
-        },
-        {
-          answerText: "the initialization, the test, and Incrementation",
-          isCorrect: false,
-        },
-        { answerText: "All of the above", isCorrect: false },
-      ],
-    },
-    {
-      questionText:
-        "What is the correct syntax for referring to an external script called 'LFC.js'?",
-      answerOptions: [
-        { answerText: '<script src="LFC.js">', isCorrect: true },
-        { answerText: '<script source="LFC.js">', isCorrect: false },
-        { answerText: '<script ref="LFC.js">', isCorrect: false },
-        { answerText: '<script type="LFC.js">', isCorrect: false },
-      ],
-    },
-  ];
-
   const [questionNumber, setQuestionNumber] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [numberCorrect, setNumberCorrect] = useState(0);
   const [highScores, setHighScores] = useState([]);
   const [userName, setUserName] = useState("");
+  const [isGameStart, setIsGameStart] = useState(false);
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect) {
@@ -87,6 +32,16 @@ const Game = () => {
     setNumberCorrect(0);
   };
 
+  const handleChange = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsGameStart(true);
+    console.log(event.target);
+  };
+
   return (
     <div className="game-container">
       <div className="game-card">
@@ -99,15 +54,12 @@ const Game = () => {
               Play Again
             </button>
           </div>
-        ) : userName === "" ? (
-          <div className="name-field">
-            <span>Enter Your Name</span>
-            <input
-              type="text"
-              placeholder="Enter Your Name"
-              className="name-input"
-            />
-          </div>
+        ) : !isGameStart ? (
+          <NameForm
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            userName={userName}
+          />
         ) : (
           <>
             <div className="question">
@@ -130,7 +82,7 @@ const Game = () => {
           </>
         )}
       </div>
-      <HighScores highScores={highScores} />
+      <HighScores userName={userName} highScores={highScores} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ const HighScores = (props) => {
       <div className="hswordcontainer">
         <span>Want to see where you rank?</span>
         <span>Here are the top scores</span>
+        {props.userName ? props.userName : null}
         {props.highScores.map((score) => {
           return <p>{score}</p>;
         })}
