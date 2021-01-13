@@ -1,0 +1,14 @@
+.name-input {
+    width: 150px;
+    text-align: center;
+}
+
+
+.name-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+}

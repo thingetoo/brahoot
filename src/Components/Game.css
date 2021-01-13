@@ -73,15 +73,3 @@ button:hover {
     background: yellowgreen
 }
 
-.name-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 150px
-}
-
-.name-input {
-    width: 150px;
-    margin-left: 20px;
-}

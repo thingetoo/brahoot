@@ -1,9 +1,9 @@
 import React from "react";
+import "./NameForm.css";
 
 export const NameForm = (props) => (
   <form className="name-field" onSubmit={props.handleSubmit}>
     <label>
-      Name:
       <input
         name="name"
         type="text"
@@ -13,6 +13,6 @@ export const NameForm = (props) => (
         onChange={props.handleChange}
       />
     </label>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Start Game" />
   </form>
 );
