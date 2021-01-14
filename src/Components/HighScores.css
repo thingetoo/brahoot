@@ -3,5 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    height: 50px;
+    height: 150px;
+}
+
+.high-score-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
