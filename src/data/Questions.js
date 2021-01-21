@@ -55,4 +55,12 @@ export const questions = [
       { answerText: '<script type="LFC.js">', isCorrect: false },
     ],
   },
+  {
+    questionText:
+      "The external JavaScript file must contain <script> tag. True or False?",
+    answerOptions: [
+      { answerText: "true", isCorrect: false },
+      { answerText: "false", isCorrect: true },
+    ],
+  },
 ];
