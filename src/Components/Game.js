@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import HighScores from "./HighScores";
 import { NameForm } from "./NameForm";
 
 import "./Game.css";
 import { questions } from "../data/Questions";
+
+axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
+  .then(res => console.log(res.data.results[0]))
 
 const Game = () => {
   const [questionNumber, setQuestionNumber] = useState(0);
