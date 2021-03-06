@@ -4,7 +4,6 @@ import HighScores from "./HighScores";
 import { NameForm } from "./NameForm";
 
 import "./Game.css";
-// import { questions } from "../data/Questions";
 let questions;
 
 axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
