@@ -4,10 +4,11 @@ import HighScores from "./HighScores";
 import { NameForm } from "./NameForm";
 
 import "./Game.css";
-import { questions } from "../data/Questions";
+// import { questions } from "../data/Questions";
+let questions;
 
 axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
-  .then(res => console.log(res.data.results[0])) //
+  .then(res => questions = res.data.results) //
 
 const Game = () => {
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -69,17 +70,17 @@ const Game = () => {
             <div className="question">
               <span id="question-number">Question #{questionNumber + 1}</span>
               <span id="question-text">
-                {questions[questionNumber].questionText}
+                {questions[questionNumber].question}
               </span>
             </div>
             <div className="answer-container">
-              {questions[questionNumber].answerOptions.map((answer, idx) => (
+              {questions[questionNumber].incorrect_answers.map((answer, idx) => (
                 <button
                   key={`answer# ${idx}`}
                   onClick={() => handleAnswerButtonClick(answer.isCorrect)}
                   className="each-answer-button"
                 >
-                  {answer.answerText}
+                  {answer}
                 </button>
               ))}
             </div>
