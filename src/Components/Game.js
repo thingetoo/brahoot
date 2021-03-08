@@ -7,7 +7,7 @@ import "./Game.css";
 let questions;
 
 axios.get('https://opentdb.com/api.php?amount=10&type=multiple')
-  .then(res => questions = res.data.results) //
+  .then(res => questions = res.data.results)
 
 const Game = () => {
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -82,6 +82,11 @@ const Game = () => {
                   {answer}
                 </button>
               ))}
+                <button className="each-answer-button"
+                onClick={() => handleAnswerButtonClick(questions[questionNumber].correct_answer.isCorrect)}
+                >
+                  {questions[questionNumber].correct_answer}
+                </button>
             </div>
           </>
         )}
