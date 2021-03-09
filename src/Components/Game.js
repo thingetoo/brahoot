@@ -17,8 +17,9 @@ const Game = () => {
   const [userName, setUserName] = useState("");
   const [isGameStart, setIsGameStart] = useState(false);
 
-  const handleAnswerButtonClick = (isCorrect) => {
-    if (isCorrect) {
+  const handleAnswerButtonClick = (event) => {
+    console.log(event, questions[questionNumber].correct_answer);
+    if (true) {
       setNumberCorrect(numberCorrect + 1);
     }
     const nextQuestion = questionNumber + 1;
@@ -43,7 +44,6 @@ const Game = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsGameStart(true);
-    console.log(event.target);
   };
 
   return (
@@ -76,14 +76,14 @@ const Game = () => {
               {questions[questionNumber].incorrect_answers.map((answer, idx) => (
                 <button
                   key={`answer# ${idx}`}
-                  onClick={() => handleAnswerButtonClick(answer.isCorrect)}
+                  onClick={(event) => handleAnswerButtonClick(event)}
                   className="each-answer-button"
                 >
                   {answer}
                 </button>
               ))}
                 <button className="each-answer-button"
-                onClick={() => handleAnswerButtonClick(questions[questionNumber].correct_answer.isCorrect)}
+                onClick={(event) => handleAnswerButtonClick(event)}
                 >
                   {questions[questionNumber].correct_answer}
                 </button>
